@@ -1,0 +1,61 @@
+@use '../../variables' as *;
+
+
+.support {
+  text-align: center;
+  padding: var(--space-section) 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+
+  &__title {
+    font-size: clamp(1.9rem, 1.55rem + 1vw, 2.4rem);
+    font-weight: 700;
+    color: var(--clr-dark);
+    margin-bottom: 3rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  &__card {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform .3s ease, box-shadow .3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: var(--clr-dark);
+      margin-bottom: .65rem;
+    }
+    p {
+      color: var(--clr-mid);
+      font-size: .98rem;
+      line-height: 1.55;
+    }
+  }
+
+  /* animated icon pulse */
+  &__icon {
+    --pulse: var(--clr-primary);
+    font-size: 2.6rem;
+    color: var(--pulse);
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: pulse 2.5s infinite;
+
+    @keyframes pulse {
+      0%, 100% { filter: drop-shadow(0 0 0 var(--pulse)); }
+      50%      { filter: drop-shadow(0 0 8px var(--pulse)); }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+:root {
+  --clr-primary: #0057ff;
+  --clr-primary-dark: #003bb3;
+  --clr-accent: #ff6200;
+  --clr-bg: #f4f6f9;
+  --clr-white: #ffffff;
+  --clr-gray: #6b7280;
+  --clr-dark: #1f2937;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--clr-bg);
+  color: var(--clr-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--clr-dark);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--clr-primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    background: var(--clr-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 87, 255, 0.2);
+  }
+}
+
+.section {
+  padding: 5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='date'] {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+
+  &:focus {
+    border-color: var(--clr-primary);
+  }
+}

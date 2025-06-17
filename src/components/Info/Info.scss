@@ -1,0 +1,35 @@
+@use '../../variables' as *;
+
+.info {
+  position: relative;
+  padding: var(--space-section) 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #fdfdfd, #f7faff);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.08), transparent 70%);
+    z-index: -1;
+  }
+
+  &__content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 1.4rem + 2vw, 2.6rem);
+    font-weight: 700;
+    color: var(--clr-dark);
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 1.1rem;
+    color: var(--clr-mid);
+    line-height: 1.6;
+  }
+}

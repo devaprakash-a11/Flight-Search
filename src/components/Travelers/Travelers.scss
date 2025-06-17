@@ -1,0 +1,82 @@
+@use '../../variables' as *;
+
+
+.travelers {
+  padding: 4.5rem 2rem;
+  background: var(--clr-light);
+  text-align: center;
+
+  &__content { max-width: 980px; margin: 0 auto; }
+
+  &__title {
+    font-size: clamp(1.9rem, 1.5rem + 1vw, 2.35rem);
+    font-weight: 700;
+    color: var(--clr-dark);
+  }
+
+  &__subtitle {
+    color: var(--clr-mid);
+    margin: 1rem auto 3rem;
+    max-width: 660px;
+
+    a {
+      color: var(--clr-primary);
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  &__card {
+    position: relative;
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s;
+
+    /* subtle tilt + glow */
+    &:hover {
+      transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* sparkle effect in hover */
+    &:after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: conic-gradient(from 180deg, transparent 0 10%, rgba(13,110,253,.2) 10% 20%, transparent 20% 100%);
+      mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity .35s;
+    }
+    &:hover:after { opacity: 1; }
+  }
+
+  &__quote {
+    font-size: 1.05rem;
+    color: var(--clr-dark);
+    margin-bottom: 1rem;
+    line-height: 1.55;
+    font-style: italic;
+  }
+
+  &__author {
+    font-weight: 600;
+    color: var(--clr-primary);
+    font-size: .95rem;
+  }
+}
